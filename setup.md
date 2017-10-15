@@ -41,9 +41,11 @@ echo source /usr/share/virtualenvwrapper/virtualenvwrapper.sh >> ~/.bashrc
 echo export WORKON_HOME="~/.environments" >> ~/.bashrc
 source ~/.bashrc
 mkvirtualenv angr && pip install angr
+apt-get -y install ruby
+apt-get -y install gem
 gem install one_gadget
-sudo apt-get install vim
-sudo apt-get install ctags
+sudo apt-get -y install vim
+sudo apt-get -y install ctags
 sudo apt-get install volatility pintool binwalk
 git clone https://github.com/Z3Prover/z3.git
 cd z3
