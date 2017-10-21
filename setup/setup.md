@@ -1,6 +1,9 @@
 # my env setting
 
 **env.sh script**
+- copy to your env.sh file
+- chmod to exec this script
+- ./env.sh
 ```
 #!/bin/bash 
 #
@@ -67,10 +70,7 @@ make install
 
 # vim setting
 **git clone**
-```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-```
+`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
 **main script in .vimrc**
 ```
@@ -133,3 +133,5 @@ set ignorecase
 set nu
 ```
 
+**run this on your terminal**
+- `vim +PluginInstall +qall`
