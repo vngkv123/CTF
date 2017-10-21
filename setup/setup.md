@@ -70,8 +70,8 @@ make install
 
 # vim setting
 **git clone**
-`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-
+- `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+- write below script via `vi ~/.vimrc`
 **main script in .vimrc**
 ```
 syntax on
