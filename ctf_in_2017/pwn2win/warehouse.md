@@ -47,4 +47,25 @@ Dynamic section at offset 0xf14 contains 24 entries:
       0xf7fe7804 <_dl_fixup+4>    push   esi
       0xf7fe7805 <_dl_fixup+5>    push   ebx
       0xf7fe7806 <_dl_fixup+6>    call   0xf7ff272d <__x86.get_pc_thunk.si>
+      
+gef➤  x/2wx 0x80482ec + 0x10
+0x80482fc:	0x0804a014	0x00000307
 ```
+- 0x804a014 is got address 
+- first 07 is magic number 
+- 2~4byte is used to SYMTAB number
+- SYMTAB is 16byte structure
+- In above example, symtab address : 0x80481cc
+- 16 * 3 + 0x80481cc
+```
+gef➤  x/2wx 0x80481cc + 48
+0x80481fc:	0x0000001f	0x00000000
+gef➤  
+0x8048204:	0x00000000	0x00000012
+gef➤  
+0x804820c:	0x00000047
+```
+- 1st, 5th value is important
+- first 0x1f is strtab offset.
+- STRTAB + 0x1f -> "puts"
+- 5th value is load check value. -> & with 3 ( lowest 2bits )
