@@ -29,3 +29,22 @@ Dynamic section at offset 0xf14 contains 24 entries:
  0x6ffffff0 (VERSYM)                     0x80482a6
  0x00000000 (NULL)                       0x0
 ```
+
+**_dl_runtime_resolve -> _dl_fixup**
+- JMPREL is important
+- before calling _dl_fixup, edx has reloc_offset and eax has link_map structure pointer.
+- JMPREL + reloc_offset( edx ) is important
+```
+   0xf7fee020 <_dl_runtime_resolve+0> push   eax
+   0xf7fee021 <_dl_runtime_resolve+1> push   ecx
+   0xf7fee022 <_dl_runtime_resolve+2> push   edx
+   0xf7fee023 <_dl_runtime_resolve+3> mov    edx, DWORD PTR [esp+0x10]
+   0xf7fee027 <_dl_runtime_resolve+7> mov    eax, DWORD PTR [esp+0xc]
+ → 0xf7fee02b <_dl_runtime_resolve+11> call   0xf7fe7800 <_dl_fixup>
+   ↳  0xf7fe7800 <_dl_fixup+0>    push   ebp
+      0xf7fe7801 <_dl_fixup+1>    push   edi
+      0xf7fe7802 <_dl_fixup+2>    mov    edi, eax
+      0xf7fe7804 <_dl_fixup+4>    push   esi
+      0xf7fe7805 <_dl_fixup+5>    push   ebx
+      0xf7fe7806 <_dl_fixup+6>    call   0xf7ff272d <__x86.get_pc_thunk.si>
+```
