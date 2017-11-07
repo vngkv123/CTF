@@ -39,7 +39,9 @@ source ~/.bashrc
 mkvirtualenv angr && pip install angr
 apt-get -y install ruby
 apt-get -y install gem
+sudo apt-get install ruby-dev
 gem install one_gadget
+gem install seccomp-tools
 sudo apt-get -y install vim
 sudo apt-get -y install ctags
 sudo apt-get install volatility pintool binwalk
