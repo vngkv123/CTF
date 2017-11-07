@@ -144,3 +144,34 @@ set nu
 
 **run this on your terminal**
 - `vim +PluginInstall +qall`
+
+
+**qira**
+
+```
+cd ~/
+git clone https://github.com/BinaryAnalysisPlatform/qira.git
+cd qira/
+./install.sh
+```
+
+**angr**
+
+```
+sudo apt-get install python-dev libffi-dev build-essential virtualenvwrapper
+mkdir ~/.environments
+sudo find / -name "virtualenvwrapper.sh"
+/usr/share/virtualenvwrapper/virtualenvwrapper.sh
+echo source /usr/share/virtualenvwrapper/virtualenvwrapper.sh >> ~/.bashrc
+echo export WORKON_HOME="~/.environments" >> ~/.bashrc
+source ~/.bashrc
+mkvirtualenv angr && pip install angr
+```
+
+
+**ruby utils**
+
+```
+gem install one_gadget
+gem install seccomp-tools
+```
