@@ -4,6 +4,13 @@
 - copy to your env.sh file
 - chmod to exec this script
 - ./env.sh
+
+```
+gef option
+wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py
+echo source ~/.gdbinit-gef.py >> ~/.gdbinit
+```
+
 ```
 #!/bin/bash 
 #
@@ -27,8 +34,8 @@ apt-get install python2.7 python-pip python-dev git libssl-dev libffi-dev build-
 pip install --upgrade pip
 pip install --upgrade pwntools
 sudo pip install ropgadget
-wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py
-echo source ~/.gdbinit-gef.py >> ~/.gdbinit
+git clone https://github.com/longld/peda.git ~/peda
+echo "source ~/peda/peda.py" >> ~/.gdbinit
 git clone https://github.com/scwuaptx/Pwngdb.git
 cp ~/Pwngdb/.gdbinit ~/
 git clone https://github.com/JonathanSalwan/ROPgadget
@@ -52,7 +59,9 @@ sudo apt-get -y install ctags
 sudo apt-get install volatility pintool binwalk
 git clone https://github.com/Z3Prover/z3.git
 cd z3
-python scripts/mk_make.py
+virtualenv venv
+source venv/bin/activate
+python scripts/mk_make.py --python
 cd build
 make
 make install
