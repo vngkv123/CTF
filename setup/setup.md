@@ -56,7 +56,7 @@ apt-get -y install gem
 gem install one_gadget
 sudo apt-get -y install vim
 sudo apt-get -y install ctags
-sudo apt-get install volatility pintool binwalk
+sudo apt-get install volatility binwalk
 git clone https://github.com/Z3Prover/z3.git
 cd z3
 virtualenv venv
