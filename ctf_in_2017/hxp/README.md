@@ -124,3 +124,9 @@ find hxp{k3eP_C4lM_AnD_D0n't_P4n1c__G0_i5_S4F3}
 hxp{k3eP_C4lM_AnD_D0n't_P4n1c__G0_i5_S4F3}
 [*] Stopped process '/usr/bin/gdb' (pid 4985)
 ```
+
+
+
+**revenge_of_the_zwiebel**
+
+- Flag : `hxp{1_5m3ll_l4zyn355}`
