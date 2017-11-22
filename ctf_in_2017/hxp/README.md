@@ -11,6 +11,14 @@
 - So, I write shellcode on some stack, and jmp to that address
 
 
+
+
+
+
+
+
+
+
 **revenge_of_the_zwiebel**
 
 - check argv[1] length
