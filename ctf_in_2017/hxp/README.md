@@ -130,3 +130,7 @@ hxp{k3eP_C4lM_AnD_D0n't_P4n1c__G0_i5_S4F3}
 **revenge_of_the_zwiebel**
 
 - Flag : `hxp{1_5m3ll_l4zyn355}`
+- Anti-debug detection -> binary patch or dynamically set return value
+- There are so many Encrypted code chunk -> Need to Decrypt it
+- Need to make some automation script
+- Figure out flag's index and bit
