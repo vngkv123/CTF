@@ -46,5 +46,16 @@ EFLAGS: 0x202 (carry parity adjust zero sign trap INTERRUPT direction overflow)
 - 0x47ba23 is fail routine. Feature of Fail.
 - Find Success Routine
 - make script for automation ( check fail or success ) -> Brute force
+- success statement is here
+```
+loc_47B998:
+lea     rax, unk_4A8374
+mov     [rsp+0F0h+var_48], rax
+mov     [rsp+0F0h+var_40], 1Ch
+mov     [rsp+0F0h+var_98], 0
+mov     [rsp+0F0h+var_90], 0
+lea     rax, unk_489D80
+```
 
-
+- `unk_4a8374` : -> `Seems like you got a flag...`
+- This is final Success routine.
