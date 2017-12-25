@@ -8,11 +8,7 @@ def inverse(length, init, rtable, seq):
     for i in xrange(length):
         val = (rtable[seq + i] % length)
         if i != val:
-            '''
-            init[i] = table[i] ^ table[val]
-            init[val] = init[i] ^ table[val]
-            init[i] = init[i] ^ init[val]
-            '''
+
             init[i] = init[i] ^ init[val]
             init[val] = init[i] ^ init[val]
             init[i] = init[i] ^ init[val]
@@ -56,3 +52,7 @@ for bit in init_table:
     cnt += 1
 
 print flag
+
+'''
+flag is : XMAS{S1mp1e_diff3r3nt1cal_c0d1ng_:p}
+'''
