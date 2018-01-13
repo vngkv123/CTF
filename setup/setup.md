@@ -4,7 +4,7 @@
 - copy to your env.sh file
 - chmod to exec this script
 - ./env.sh
-
+- https://github.com/spf13/spf13-vim
 ```
 gef option
 wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py
