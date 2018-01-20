@@ -14,54 +14,41 @@ def get_messages_from_js(message, data):
 
 def instrument_debugger_checks():
     hook_code = '''
-/*
-    Java.perform(function () {
-        var jstr = Java.use("sg.vantagepoint.a.c");
-
-        jstr.a.implementation = function(){
-            console.log("a bypass");
-            return false;
-        };
-        jstr.b.implementation = function(){
-            console.log("b bypass");
-            return false;
-        };
-        jstr.c.implementation = function(c){
-            console.log("c bypass");
-            return false;
-        };
-    });
-
-    Java.perform(function () {
-        var debug = Java.use("sg.vantagepoint.uncrackable1.MainActivity");
-        debug.a.implementation = function(v1){
-            console.log("Debug bypass");
+    Java.perform(function(){
+        root = Java.use("sg.vantagepoint.a.c");
+        root.a.implementation = function(){
+            send("root detection 1 bypass");
             return false;
         }
-    });
-*/
-    Java.perform(function() {
 
-        bClass = Java.use("sg.vantagepoint.uncrackable1.b");
-        bClass.onClick.implementation = function(v) {
-         console.log("[*] onClick");
+        root = Java.use("sg.vantagepoint.a.c");
+        root.b.implementation = function(){
+            send("root detection 2 bypass");
+            return false;
         }
 
-        aaClass = Java.use("sg.vantagepoint.a.a");
-        aaClass.a.implementation = function(arg1, arg2) {
-            retval = this.a(arg1, arg2);
-            password = ''
-            for(i = 0; i < retval.length; i++) {
-               password += String.fromCharCode(retval[i]);
+        root = Java.use("sg.vantagepoint.a.c");
+        root.c.implementation = function(){
+            send("root detection 3 bypass");
+            return false;
+        }
+
+        debug = Java.use("sg.vantagepoint.uncrackable1.b");
+        debug.onClick.implementation = function(v1){
+            send("Debug bypass");
+        }
+
+        secret = Java.use("sg.vantagepoint.a.a");
+        secret.a.implementation = function(v1, v2){
+            res = this.a(v1, v2);
+            send(res);
+            pw = ''
+            for( var i = 0; i < res.length; i++ ){
+                pw += String.fromCharCode(res[i]);
             }
-
-            console.log("[*] Decrypted: " + password);
-            return retval;
+            send(pw);
         }
-        console.log("[*] sg.vantagepoint.a.a.a modified");
-
     });
-
 '''
     return hook_code
 
