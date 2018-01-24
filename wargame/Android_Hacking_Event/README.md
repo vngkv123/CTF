@@ -35,5 +35,5 @@
 5. So, i hook `delete` method, then i can get the some `.apk` file.
 6. This apk file has suspicious md5 hash string.
 7. Decrypt it -> get "Cool" String.
-
+![Result](https://github.com/vngkv123/CTF/blob/master/wargame/Android_Hacking_Event/ReverseMe/ReverseMe.png)
 **2015**
