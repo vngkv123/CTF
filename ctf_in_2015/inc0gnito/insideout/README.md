@@ -1,7 +1,7 @@
 # Reversing Challenge
 **Description**
 - View on strings window in IDA, some suspicious strings are exist.
-![strings](url)
+![strings](https://github.com/vngkv123/CTF/blob/master/ctf_in_2015/inc0gnito/insideout/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202018-01-25%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%201.49.07.png)
 - I do xref, this program do some simple xor calculation.
 - I write a short python code to decrypt it.
 ```
