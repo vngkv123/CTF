@@ -46,3 +46,5 @@ char *__cdecl floppy_modify(struct floppy *floppy)
 - `Description` is 12byte length, but it modify 37byte.
 - It can overwrite `floppy1` structure.
 - It lead us to libc leak, stack leak and control the $pc. 
+
+![solve](https://github.com/vngkv123/CTF/blob/master/ctf_in_2016/codegate/floppy/solve.png)
