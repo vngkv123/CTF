@@ -1,0 +1,22 @@
+--- ./GlobalObject.cpp	2018-03-07 08:11:48.000000000 +0800
++++ ./GlobalObject_p.cpp	2018-03-08 00:10:43.043154000 +0800
+@@ -1572,19 +1572,6 @@ LHexError:
+         Assert(!(callInfo.Flags & CallFlags_New));
+ 
+         ScriptContext* scriptContext = function->GetScriptContext();
+-        if (!scriptContext->GetConfig()->IsCollectGarbageEnabled()
+-#ifdef ENABLE_PROJECTION
+-            && scriptContext->GetConfig()->GetHostType() != HostType::HostTypeApplication
+-            && scriptContext->GetConfig()->GetHostType() != HostType::HostTypeWebview
+-#endif
+-            )
+-        {
+-            // We expose the CollectGarbage API with flag for compat reasons.
+-            // If CollectGarbage key is not enabled, and if the HostType is neither
+-            // HostType::HostTypeApplication nor HostType::HostTypeWebview,
+-            // then we do not trigger collection.
+-            return scriptContext->GetLibrary()->GetUndefined();
+-        }
+ 
+         Recycler* recycler = scriptContext->GetRecycler();
+         if (recycler)

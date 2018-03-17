@@ -1,0 +1,20 @@
+--- ./JavascriptArray.cpp	2018-03-07 08:11:48.000000000 +0800
++++ ./JavascriptArray_p.cpp	2018-03-08 18:30:04.976112000 +0800
+@@ -6985,7 +6985,7 @@ Case0:
+         uint32 insertLen = args.Info.Count > 3 ? args.Info.Count - 3 : 0;
+ 
+         // Force check the prototype as we may insert values more than current elements
+-        if (pArr != nullptr && !HasAnyES5ArrayInPrototypeChain(pArr, true /*forceCheckProtoChain*/))
++        if (pArr != nullptr)
+         {
+             // Since we get the length from an array and that cannot be more than uint32.
+             _Analysis_assume_(length <= UINT_MAX);
+@@ -10486,7 +10486,7 @@ Case0:
+         {
+             if (JavascriptArray::Is(arr))
+             {
+-                arr = EnsureNonNativeArray(arr);
++               
+                 ArrayElementEnumerator e(arr, startIndex, limitIndex);
+ 
+                 while(e.MoveNext<Var>())

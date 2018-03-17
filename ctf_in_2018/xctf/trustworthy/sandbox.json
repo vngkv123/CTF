@@ -1,0 +1,48 @@
+{
+	"no_win32k": true,
+	"force_reloc": true,
+	"critical_heap": true,
+	"bottom_up_aslr": true,
+	"high_entropy_aslr": true,
+	"critical_handle": true,
+	"no_ep": true,
+	"no_dyncode": true,
+	"no_fontload": true,
+	"no_remote_img": true,
+	"no_low_img": true,
+	"sysimg_prefer": true,
+	"dep": true,
+	"sehop": true,
+	"no_child": true,
+
+	"restrict_ui": true,
+	"timeout": 500000000,
+	"memory": 41943040,
+	"active_process": 1,
+
+	"user": "ctf",
+	"password": <REDACTED>,
+    "integrity_level": "low",
+
+	"restricted_token": true,
+	"remove_all_priv": true,
+	"remove_privs": [
+	],
+	"deny_sids": [
+			"BA",
+			"MU",
+			"AU",
+			"IU",
+			"S-1-5-32-559",
+			"S-1-2-1",
+			"S-1-5-64-10",
+			"S-1-5-15",
+			"S-1-5-113",
+			"S-1-2-0"
+	],
+	"restrict_sids": [
+	],
+
+	"redir_io": false,
+	"wait_time": 5000
+}
