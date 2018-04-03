@@ -20,10 +20,10 @@ apt-get install python2.7 python-pip python-dev git libssl-dev libffi-dev build-
 pip install --upgrade pip
 pip install --upgrade pwntools
 sudo pip install ropgadget
-wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py
-echo source ~/.gdbinit-gef.py >> ~/.gdbinit
 git clone https://github.com/scwuaptx/Pwngdb.git
 cp ~/Pwngdb/.gdbinit ~/
+git clone https://github.com/longld/peda.git ~/peda
+echo "source ~/peda/peda.py" >> ~/.gdbinit
 git clone https://github.com/JonathanSalwan/ROPgadget
 cd ~/
 git clone https://github.com/BinaryAnalysisPlatform/qira.git
@@ -44,10 +44,3 @@ gem install one_gadget
 gem install seccomp-tools
 sudo apt-get -y install vim
 sudo apt-get -y install ctags
-sudo apt-get install volatility pintool binwalk
-git clone https://github.com/Z3Prover/z3.git
-cd z3
-python scripts/mk_make.py
-cd build
-make
-make install
