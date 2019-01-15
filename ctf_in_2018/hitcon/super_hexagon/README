@@ -1,0 +1,30 @@
+
+=====================
+    Super Hexagon
+=====================
+
+
+1.  Flags have to be read from 8 sysregs: s3_3_c15_c12_0 ~ s3_3_c15_c12_7
+    For example, in aarch64, you may use:
+
+            mrs x0, s3_3_c15_c12_0
+            mrs x1, s3_3_c15_c12_1
+                             .
+                             .
+                             .
+            mrs x7, s3_3_c15_c12_7
+
+    For first two stages, EL0 and EL1, `print_flag' functions are included.
+    Make good use of them.
+
+    qemu-system-aarch64, based on qemu-3.0.0, is also patched to support this
+    feature. See `qemu.patch' for more details.
+
+
+
+2.  You may add `-S -s' to qemu-system-aarch64 and debug with gdb-multiarch.
+    However, if you want to debug ARM binary, you have to patch QEMU, since it
+    always give AArch64 debug information. See `qemu-arm-debug.patch'.
+
+    Besides, latest gdb 8.2 may be less buggy.
+
